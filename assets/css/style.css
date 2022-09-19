@@ -1,0 +1,217 @@
+@charset"utf-8";
+
+/* ========================================
+    リセットcss
+========================================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-style:normal;
+	font-weight: normal;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html{overflow-y: scroll;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: ''; content: none;}
+input, textarea,{margin: 0; padding: 0;}
+ol, ul{list-style:none;}
+table{border-collapse: collapse; border-spacing:0;}
+caption, th{text-align: left;}
+a:focus {outline:none;}
+
+/* micro clearfix */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {clear: both;}
+.cf {*zoom: 1;}
+
+/* ========================================  　
+    基本設定
+========================================= */
+body {
+	background: url("http://localhost:8002/img/closet-g62cdec9e9_1920.jpeg");
+	background-size: cover;
+	background-attachment: fixed;
+	text-shadow:1px 1px 0 #000;
+}
+
+div#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/* ========================================  　
+    ヘッダー
+========================================= */
+header {
+	width: 980px;
+	height: 89px;
+	/* background-color:#036038; */
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position:fixed;
+	z-index: 10;
+	border-bottom: 1px solid #000;
+	/* box-shadow:0px 1px rgba(0,0,0,1); */
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: 900;
+	font-family: 'Roboto', sans-serif;
+	/* background-color: #036038; */
+	margin: 0 auto;
+	line-height: 89px;
+	color: #fff;
+	text-shadow:1px 1px 0 #000;
+}
+
+
+
+a {
+	font-size: larger;	
+}
+
+.btn {
+	color: rgba(108, 77, 77, 1);
+	text-shadow: 3px 3px rgba(60, 44, 44, 0.8);
+	cursor: pointer; 
+}
+
+.btn:hover {
+	color: rgba(108, 77, 77, 1);
+	text-shadow: 3px 3px rgba(60, 44, 44, 1);
+	cursor: pointer; 
+} 
+
+.btn:active {
+	color: rgba(108, 77, 77, 1);
+	text-shadow: 1px 1px rgba(60, 44, 44, 1);
+	cursor: pointer; 
+	position: relative;
+	top: 2px;
+	left: 2px;
+} 
+
+/* .fa-solid fa-circle-plus fa-3x {
+	color: rgba(108, 77, 77, 0.8);
+}
+.fa-solid fa-circle-plus fa-3x:hover {
+	opacity: 1;
+} */
+
+
+i {
+	margin-right: 20px;
+	
+}
+
+i.plus {
+	f1ec;
+	
+}
+
+/* ========================================  　
+    メイン
+========================================= */
+
+div#main {
+	width: 960px;
+	height: auto;
+	/* background-color: yellow; */
+	margin:0 0 20px 0; 
+	
+}
+
+div.container {
+	width: 960px;
+	/* background-color: crimson; */
+	padding-top: 110px;
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(200,300px);
+	gap: 40px;
+}
+
+div.item_image {
+	/* height: 300px; */
+	/* width: 300px; */
+	/* background-color: #0bd; */	
+}
+
+div.item_image a {
+	text-decoration: none;
+}
+
+div.item_image:hover {
+	opacity: 0.9;
+}
+
+.item_image img {
+	box-shadow: 3px 3px rgb(59, 59, 59);
+	display: block;
+} 
+.item_image img:active {
+	box-shadow: 1px 1px rgb(59, 59, 59);
+	position: relative;
+	top: 2px;
+	left: 2px;
+}
+
+.item_image p {
+	text-align: center;
+	color: #fff;
+	text-shadow:1px 1px 0 #000;
+}
+
+
+
+div.item_name {
+	/* background-color: lightcoral; */
+	color: #fff;
+}
+
+div.clear {
+	clear:both;
+}
+
+/* ========================================  　
+    フッター
+========================================= */
+
+footer {
+	width: 100%;
+	height: 50px;
+	/* background-color:black; */
+	margin-top: 20px;
+	display: flex;
+	justify-content:flex-end
+}
+
+.footer {
+	color: #fff;
+	
+}

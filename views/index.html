@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">	
+	<title>closet maneger</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<!--フォント-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<!--ここまでフォント-->
+	<!--font awesome-->
+	<script src="https://kit.fontawesome.com/f8c8eab077.js" crossorigin="anonymous"></script>
+	<!-- レスポンシブルデザイン準備viewportの設定 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- jQueryの読み込み -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+
+<body>	
+
+<div id="wrapper">
+
+	<!-- ここからヘッダー -->
+	<header>
+		
+		<h1>closet maneger</h1>
+		<a class="btn" href="/new">
+			<i class="fa-solid fa-circle-plus fa-3x"></i>
+		</a>
+					
+	</header>
+	<!-- ここまでヘッダー -->
+
+	<!-- ここからメイン -->
+
+	<div id="main">
+		<div class="container">
+			<% for (let i = 0; i < names.length; i++) { %>
+				<div class="item_image" >
+					<a href="http://localhost:8002/item?id=<%= itemId[i] %>">
+						<img src="http://localhost:8002/img/comingsoon.png" style="width: 300px; height:300px;" alt="image">
+						<p><%= names[i] %></p>
+					</a>
+				</div>
+				
+			<% } %>		
+		</div>
+	</div>
+
+	<!-- ここまでメイン -->
+
+	<div class="clear"></div>
+
+</div><!-- //#wrapper -->
+
+	<!-- ここからフッター -->
+	<footer>
+		<div class="footer">ページトップへ</div>
+	</footer>
+	<!-- ここまでフッター -->
+
+<!-- jQueryの読み込み -->
+<script src="server.js"></script>
+
+</body>
+
+</html>

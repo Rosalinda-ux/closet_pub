@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">	
+	<title>item maneger</title>
+	<link rel="stylesheet" href="css/style_item.css" type="text/css" media="screen">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<!--フォント-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<!--ここまでフォント-->
+<!--font awesome-->
+<script src="https://kit.fontawesome.com/f8c8eab077.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>	
+
+<div id="wrapper">
+
+	<!-- ここからヘッダー -->
+	<header>
+		
+		<a class="btn" href="http://localhost:8002/">戻る</a>
+		<h1>item Details</h1>
+		<form action="/delete" method="post">
+			<input class="btn" type="submit" value="削除">
+		</form>
+
+					
+	</header>
+	<!-- ここまでヘッダー -->
+
+	<!-- ここからメイン -->
+	<div id="main">
+		<div id="image">
+			<img src="https://drive.google.com/file/d/12WZ42MadLyr3U26uS6twIoGENE8XZlI7/view?usp=sharing">
+		</div>
+
+		<div id="detail">
+			<form>
+			    <label for="id">ID</label><br>
+					<input type="text" name="id" id="id" style="width:400px; height: 20px;" placeholder="1" value="<%= itemId %>">
+				<br>
+				<label for="name">アイテム名</label><br>
+					<input type="text" name="アイテム名" id="id" style="width:400px; height: 20px;" placeholder="クライムライトジャケット" value="<%= itemName %>">
+				<br>
+				<label for="category">カテゴリー</label><br>
+					<input type="text" name="カテゴリー" id="category" style="width:400px; height: 20px;" placeholder="アウター" value="<%= category %>">
+				<br>
+				<label for="brand">ブランド</label><br>
+				 	<input type="text" name="ブランド" id="brand" style="width:400px; height: 20px;" placeholder="ノースフェイス" value="<%= brand %>">
+			    <br>
+				 <label for="tokimeki">ときめき度</label><br>
+					<input type="text" name="ときめき" id="tokimeki" style="width:400px; height: 20px;" placeholder="10" value="<%= tokimeki %>">
+				<br>
+				<label for="price">購入価格</label><br>
+					<input type="text" name="購入価格" id="price" style="width:400px; height: 20px;" placeholder="33000" value="<%= price %>">
+				<br>
+				<label for="count">着用回数</label><br>
+					<input type="text" name="着用回数"  id="count" style="width:400px; height: 20px;" placeholder="300" value="<%= times %>">
+				<br>
+				<label for="cospa">コスパ</label><br>
+					<input type="text" name="コスパ"  id="cospa" style="width:400px; height: 20px;" placeholder="" value="<%= cospa %>">
+			    <br>
+				<label for="purchase">購入日</label><br>
+					<input type="text" name="購入日" id="purchase" style="width:400px; height: 20px;" placeholder="" value="<%= day %>">
+				<br>
+				
+				 
+				 
+				 
+			</form>
+			
+
+		</div>
+	
+		
+	</div>
+
+	
+	
+
+	<!-- ここまでメイン -->
+
+	
+
+	<div class="clear"></div>
+
+</div><!-- //#wrapper -->
+
+	<!-- ここからフッター -->
+	<footer>
+		<div class="footer"></div>
+		<a class="btn" href="http://localhost:8002/">登録</a>
+	</footer>
+	<!-- ここまでフッター -->
+
+
+</body>
+
+</html>
