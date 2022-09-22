@@ -27,7 +27,7 @@
 	<!-- ここからヘッダー -->
 	<header>
 		
-		<a class="btn" href="http://localhost:8002/">戻る</a>
+		<a class="btn" href="/">戻る</a>
 		<h1>New item</h1>
 		<!-- <a class="btn" href="#">削除</a> -->
 					
@@ -38,11 +38,11 @@
 	<div id="main">
 		<!-- 画像 -->
 		<div id="image">
-			<img src="https://drive.google.com/file/d/12WZ42MadLyr3U26uS6twIoGENE8XZlI7/view?usp=sharing">
+			<div id="thumbnail"></div>	
 		</div>
 		<!-- 項目詳細 -->
 		<div id="detail">
-			<form action="/create" method="post">
+			<form action="/create" method="post" onsubmit="return check();">
 			    <!-- <label for="id">ID</label><br>
 					<input type="text" name="id" id="id" style="width:400px; height: 20px;" placeholder="自動取得にしたい">
 				<br> -->
@@ -88,8 +88,46 @@
 	<!-- ここからフッター -->
 	<footer></footer>
 	<!-- ここまでフッター -->
+
 <!-- jQueryの読み込み -->
-<script src="server.js"></script>
+<script>
+	$(function() {
+		$('input[id=file]').change(function() {// upするinputのID
+	
+			var file = $(this).prop('files')[0];
+	
+			if (! file.type.match('image.*')) {
+				$(this).val('');
+				$('#thumbnail').html('');
+				return;
+			}
+	
+			var reader = new FileReader();
+	
+			reader.onload = function() {
+				$('#thumbnail').css('background-image','url('+reader.result+')');
+				console.log(reader.result);
+			}
+			
+			reader.readAsDataURL(file);
+		});
+	});
+	
+	function check() {
+		let msg = "";
+		if ($('#itemName').val() === "") {
+			msg += "アイテム名は必須です\n";
+		}
+		if ($('#category').val() === "") {
+			msg += "カテゴリーは必須です\n";
+		}
+		if (msg !== "") {
+			alert(msg);
+			return false;
+		}
+		return true;
+	};
+</script>
 
 </body>
 

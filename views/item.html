@@ -27,7 +27,7 @@
 	<!-- ここからヘッダー -->
 	<header>
 		
-		<a class="btn" href="http://localhost:8002/">戻る</a>
+		<a class="btn" href="/">戻る</a>
 		<h1>item Details</h1>
 		<!-- 削除ボタン -->
 		<form action="/delete/<%= itemId %>" method="post">
@@ -123,6 +123,7 @@
 			reader.readAsDataURL(file);
 		});
 	});
+	
 	function check() {
 		let msg = "";
 		if ($('#itemName').val() === "") {

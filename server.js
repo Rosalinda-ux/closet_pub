@@ -93,7 +93,7 @@ app.get('/', function (req, res) {
     let namesJs    = [];
     
     for (let i = 0; i < c.length; i++) {
-      idJs.push(c[i]["ID"]);//全アイテムのidを順に格納//いらない？
+      idJs.push(c[i]["ID"]);//全アイテムのidを順に格納
       namesJs.push(c[i]["NAME"]);//同様に名前
       imgsJs.push(c[i]["IMG"]);//同様に画像データ
     }
@@ -113,7 +113,7 @@ app.get('/item', function (req, res) {
   console.log("アイテム詳細ページの表示処理を開始");
   //∵html'/'のリンクで/item?id=<%= itemId[i] %>としてる
   console.log("/itemのreq.query.id =", req.query.id);//idが存在
-  console.log("/itemのreq.params.id =", req.params.id);//IDがない
+  console.log("/itemのreq.params.id =", req.params.id);//idがない
   gasGetCall("?id=" + req.query.id, function(e, r, b) {
     if (e) {
       console.log("エラーを表示");
@@ -164,7 +164,7 @@ app.post('/create', (req, res) => {
   console.log("/createのreq.body.id", req.body.id);//undefined,idはhtmlで入力せずgasで振るので
   //GASにデータを追加
   gasPostCall("", {//data: body
-    // id      :req.body.id,//undefined,新規登録でidはhtmlで入力せずgasで振る
+  // id     :req.body.id,//undefined,新規登録でidはhtmlで入力せずgasで振る
            //req.body.(htmlのname属性)
     itemName:req.body.itemName,
     category:req.body.category,

@@ -43,8 +43,8 @@
 		<div class="container">
 			<% for (let i = 0; i < names.length; i++) { %>
 				<div class="item_image" >
-					<a href="http://localhost:8002/item?id=<%= itemId[i] %>">
-						<img src="http://localhost:8002/img/comingsoon.png" style="width: 300px; height:300px;" alt="image">
+					<a href="/item?id=<%= itemId[i] %>">
+						<img src="../assets/img/comingsoon.png" style="width: 300px; height:300px;" alt="image">
 						<p><%= names[i] %></p>
 					</a>
 				</div>
