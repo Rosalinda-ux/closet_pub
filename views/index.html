@@ -61,12 +61,22 @@
 
 	<!-- ここからフッター -->
 	<footer>
-		<div class="footer">ページトップへ</div>
+		
 	</footer>
 	<!-- ここまでフッター -->
 
-<!-- jQueryの読み込み -->
-<script src="server.js"></script>
+<!-- jQuery -->
+<script>
+	$(function(){
+		// ページ最上部まで自動でスクロール
+		$('h1').click(function() {
+    		$('html, body').animate({
+				'scrollTop': 0
+			}, 'slow');
+				
+  		});
+	});
+</script>
 
 </body>
 
