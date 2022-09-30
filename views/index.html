@@ -30,6 +30,7 @@
 	<header>
 		
 		<h1>closet maneger</h1>
+		<!-- ＋ボタン -->
 		<a class="btn" href="/new">
 			<i class="fa-solid fa-circle-plus fa-3x"></i>
 		</a>
@@ -44,7 +45,7 @@
 			<% for (let i = 0; i < names.length; i++) { %>
 				<div class="item_image" >
 					<a href="/item?id=<%= itemId[i] %>">
-						<img src="../assets/img/comingsoon.png" style="width: 300px; height:300px;" alt="image">
+						<img src="/img/comingsoon.png" style="width: 300px; height:300px;" alt="image">
 						<p><%= names[i] %></p>
 					</a>
 				</div>

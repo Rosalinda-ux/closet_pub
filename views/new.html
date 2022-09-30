@@ -38,11 +38,11 @@
 	<div id="main">
 		<!-- 画像 -->
 		<div id="image">
-			<div id="thumbnail"></div>	
+			<img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">	
 		</div>
 		<!-- 項目詳細 -->
 		<div id="detail">
-			<form action="/create" method="post" onsubmit="return check();">
+			<form action="/new" method="post" onsubmit="return check();" enctype="multipart/form-data">
 			    <!-- <label for="id">ID</label><br>
 					<input type="text" name="id" id="id" style="width:400px; height: 20px;" placeholder="自動取得にしたい">
 				<br> -->
@@ -70,6 +70,10 @@
 				<label for="purchase">購入日</label><br>
 					<input type="text" name="purchase" id="purchase" style="width:400px; height: 20px;" placeholder="2022/1/1">
 				<br>
+				<label for="file">イメージ</label><br>
+				<input type="file" name="file" id="file">
+				<br>
+				<!-- 登録ボタン -->
 				<input class="btn btn_update" type="submit" value="登録">
 			</form>
 			

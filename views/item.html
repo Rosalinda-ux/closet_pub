@@ -39,10 +39,12 @@
 
 	<!-- ここからメイン -->
 	<div id="main">
+		<!-- 画像 -->
 		<div id="image">
-			<div id="thumbnail"></div>	
+			<img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">
 		</div>
 		
+		<!-- 項目詳細 -->
 		<div id="detail">
 			<form action="/update/<%= itemId %>" method="post" onsubmit="return check();"><!--server.jsの受け取りは/update/:id-->
 				
@@ -80,7 +82,7 @@
 				
 		
 				<!-- 更新ボタン -->
-					<input class="btn btn_update" type="submit" value="更新">
+				<input class="btn btn_update" type="submit" value="更新">
 			 
 			</form>
 			

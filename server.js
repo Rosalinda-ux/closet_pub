@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname + '/views'));
 app.engine('html', require('ejs').renderFile);
 app.use(express.static('assets')); //assetsファイル読み込み
 app.use(bodyParser.urlencoded({ extended: true }));//フォームからの値を受け取る
-app.use(multer({dest: __dirname + '/tmp/'}).single('file'));
+app.use(multer({dest: __dirname + '/tmp/'}).single('file'));//ファイルアップロード
 app.use(session({
   secret: 'secret',
   resave: false,
@@ -66,7 +66,7 @@ function gasPostCall(param, data, callback) {//postはparamいらない？
     followAllRedirects: true,
     body: data
   };
-  console.log("GAS呼び出し(POST)", data);
+  console.log("GAS呼び出し(POST)", /*data*/);
   return request.post(options, callback);
 }
 
@@ -111,9 +111,9 @@ app.get('/', function (req, res) {
 //item.html
 app.get('/item', function (req, res) {
   console.log("アイテム詳細ページの表示処理を開始");
-  //∵html'/'のリンクで/item?id=<%= itemId[i] %>としてる
   console.log("/itemのreq.query.id =", req.query.id);//idが存在
   console.log("/itemのreq.params.id =", req.params.id);//idがない
+　//∵index.htmlでhref="/item?id=<%= itemId[i] %>"としてる
   gasGetCall("?id=" + req.query.id, function(e, r, b) {
     if (e) {
       console.log("エラーを表示");
@@ -157,36 +157,46 @@ app.get('/new', (req,res) => {
 /* post */
 
 // データを追加するルーティング
-app.post('/create', (req, res) => {
-  console.log("新規登録を開始");
-  //reqのparams,queryは空.bodyにデータ本体が入っている
-  console.log("/createのreq.body.itemName", req.body.itemName);//bodyはhtmlに入力されたデータ
-  console.log("/createのreq.body.id", req.body.id);//undefined,idはhtmlで入力せずgasで振るので
-  //GASにデータを追加
-  gasPostCall("", {//data: body
-  // id     :req.body.id,//undefined,新規登録でidはhtmlで入力せずgasで振る
-           //req.body.(htmlのname属性)
-    itemName:req.body.itemName,
-    category:req.body.category,
-    brand   :req.body.brand,
-    tokimeki:req.body.tokimeki,
-    price   :req.body.price,
-    count   :req.body.count,
-    cospa   :req.body.cospa,
-    purchase:req.body.purchase
-  }, function(e, r, b) {
-    if (e) {
-      console.log("エラーを表示");
-      console.log(e);
-    }
-    console.log(b);
-    console.log("/create gasから返ってきた");
-    console.log("/createのgasPostCallのreturn b=", b);
-    // let c = JSON.parse(b);
-    // console.log(c);
-    console.log("'/'にリダイレクトする")
-    res.redirect('/');
-  });
+app.post('/new', (req, res) => {
+  // console.log("req.file.path",req.file.path);
+  fs.readFile(req.file.path, 'base64', function(err, data) {
+    // console.log(data);
+
+
+
+    console.log("新規登録を開始");
+    //reqのparams,queryは空.bodyにデータ本体が入っている
+    console.log("/newのreq.body.itemName", req.body.itemName);//bodyはhtmlに入力されたデータ
+    console.log("/newのreq.body.id", req.body.id);//undefined,idはhtmlで入力せずgasで振るので
+    //GASにデータを追加
+    gasPostCall("", {//data: body
+    // id     :req.body.id,//undefined,新規登録でidはhtmlで入力せずgasで振る
+            //req.body.(htmlのname属性)
+      itemName:req.body.itemName,
+      category:req.body.category,
+      brand   :req.body.brand,
+      tokimeki:req.body.tokimeki,
+      price   :req.body.price,
+      count   :req.body.count,
+      cospa   :req.body.cospa,
+      purchase:req.body.purchase,
+      fileData:data
+    }, function(e, r, b) {
+      if (e) {
+        console.log("エラーを表示");
+        console.log(e);
+      }
+      console.log(b);
+      console.log("/create gasから返ってきた");
+      console.log("/createのgasPostCallのreturn b=", b);
+      // let c = JSON.parse(b);
+      // console.log(c);
+      console.log("'/'にリダイレクトする")
+      res.redirect('/');
+    });
+  });  
+
+  
 });
 
 // データを削除するルーティング
