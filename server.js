@@ -89,20 +89,20 @@ app.get('/', function (req, res) {
     console.log("bがparseされたc = ", c); //JSで扱える形式に変換された
     
     let idJs       = [];
-    let imgsJs     = [];
     let namesJs    = [];
+    let imgsJs     = [];
     
     for (let i = 0; i < c.length; i++) {
-      idJs.push(c[i]["ID"]);//全アイテムのidを順に格納
+      idJs.push(c[i]["ID"]);//全アイテムのidを順に
       namesJs.push(c[i]["NAME"]);//同様に名前
       imgsJs.push(c[i]["IMG"]);//同様に画像データ
     }
 
     // htmlをレンダリング
     res.render('index.html', {
-      itemId:idJs,
-      imgs:imgsJs, 
+      itemId:idJs, 
       names:namesJs,
+      imgs:imgsJs
     });
   });
 
@@ -162,8 +162,6 @@ app.post('/new', (req, res) => {
   fs.readFile(req.file.path, 'base64', function(err, data) {
     // console.log(data);
 
-
-
     console.log("新規登録を開始");
     //reqのparams,queryは空.bodyにデータ本体が入っている
     console.log("/newのreq.body.itemName", req.body.itemName);//bodyはhtmlに入力されたデータ
@@ -180,15 +178,15 @@ app.post('/new', (req, res) => {
       count   :req.body.count,
       cospa   :req.body.cospa,
       purchase:req.body.purchase,
-      fileData:data
+      fileData:data//写真データ
     }, function(e, r, b) {
       if (e) {
         console.log("エラーを表示");
         console.log(e);
       }
-      console.log(b);
-      console.log("/create gasから返ってきた");
-      console.log("/createのgasPostCallのreturn b=", b);
+   
+      console.log("/new gasから返ってきた");
+      console.log("/newのgasPostCallのreturn b =", b);
       // let c = JSON.parse(b);
       // console.log(c);
       console.log("'/'にリダイレクトする")

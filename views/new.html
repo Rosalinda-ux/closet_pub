@@ -133,7 +133,7 @@
 	};
 	//プレビュー
 	function previewImage(obj){
-		var fileReader = new FileReader();
+		let fileReader = new FileReader();
 		fileReader.onload = (function() {
 			document.getElementById('preview').src = fileReader.result;
 		});
