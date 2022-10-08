@@ -50,7 +50,7 @@ a:focus {outline:none;}
     基本設定
 ========================================= */
 body {
-	background: url("/img/closet-g62cdec9e9_1920.jpeg");
+	background: url("/assets/img/closet-g62cdec9e9_1920.jpeg");
 	background-size: cover;
 	background-attachment: fixed;
 	text-shadow:1px 1px 0 #000;
