@@ -3,6 +3,7 @@
 /* ========================================
     リセットcss
 ========================================= */
+/*
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -38,6 +39,7 @@ caption, th{text-align: left;}
 a:focus {outline:none;}
 
 /* micro clearfix */
+/*
 .cf:before,
 .cf:after {
     content: " ";
@@ -45,7 +47,7 @@ a:focus {outline:none;}
 }
 .cf:after {clear: both;}
 .cf {*zoom: 1;}
-
+*/
 /* ========================================  　
     基本設定
 ========================================= */
@@ -129,10 +131,10 @@ i {
 	
 }
 
-i.plus {
+/* i.plus {
 	f1ec;
 	
-}
+} */
 
 /* ========================================  　
     メイン
@@ -156,11 +158,11 @@ div.container {
 	gap: 40px;
 }
 
-div.item_image {
+/*div.item_image {
 	/* height: 300px; */
 	/* width: 300px; */
-	/* background-color: #0bd; */	
-}
+	/* background-color: #0bd; 	
+}*/
 
 div.item_image a {
 	text-decoration: none;
