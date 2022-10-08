@@ -51,12 +51,19 @@ a:focus {outline:none;}
 /* ========================================  　
     基本設定
 ========================================= */
+* {
+	box-sizing: border-box;
+}
 body {
+	width: 100%;
 	background: url("/img/closet-g62cdec9e9_1920.jpeg");
 	background-size: 100%;
-	background-size: cover;
 	background-attachment: fixed;
 	text-shadow:1px 1px 0 #000;
+	background-size: cover;
+}
+img {
+	max-width: 100%;
 }
 
 div#wrapper {
@@ -151,6 +158,7 @@ div#main {
 
 div.container {
 	width: 960px;
+	height: auto;
 	/* background-color: crimson; */
 	padding-top: 110px;
 	display: grid;
@@ -159,11 +167,11 @@ div.container {
 	gap: 40px;
 }
 
-/*div.item_image {
-	/* height: 300px; */
-	/* width: 300px; */
-	/* background-color: #0bd; 	
-}*/
+ div.item_image {
+	height: 300px; 
+	width: 300px;
+	background-color: #0bd; 	
+} 
 
 div.item_image a {
 	text-decoration: none;
@@ -176,6 +184,8 @@ div.item_image:hover {
 .item_image img {
 	box-shadow: 3px 3px rgb(59, 59, 59);
 	display: block;
+	width: 100%;
+	height: 100%;
 } 
 .item_image img:active {
 	box-shadow: 1px 1px rgb(59, 59, 59);
@@ -189,6 +199,8 @@ div.item_image:hover {
 	color: #fff;
 	text-shadow:1px 1px 0 #000;
 	margin: 0;
+	position: relative;
+	z-index: 5;
 }
 
 
@@ -212,10 +224,34 @@ footer {
 	/* background-color:black; */
 	margin-top: 20px;
 	display: flex;
-	justify-content:flex-end
+	justify-content:flex-end;
 }
 
 .footer {
 	color: rgb(22, 20, 20);
 	
+}
+
+/* レスポンシブ */
+@media(max-width:900px){
+	
+	body {
+		padding: 0.4%;
+	}
+
+	.header,
+	div#wrapper,
+	div#main {
+		width: 100%;
+	}
+	
+	div.item_image {
+    margin: 0 auto;
+  }
+
+	div.container {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
 }

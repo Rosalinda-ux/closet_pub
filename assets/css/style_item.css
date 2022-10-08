@@ -71,10 +71,10 @@ div#wrapper {
     ヘッダー
 ========================================= */
 header {
-	width: 960px;
+	width: 980px;
 	height: 89px;
 	/* background-color:#036038;  */
-
+	margin-bottom: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -129,12 +129,14 @@ h1 {
 
 div#main {
 	width: 960px;
-	height: 480px;
+	height: auto;
 	/* background-color: yellow;  */
 	/* margin:0 0 20px 0; */
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	font-size: 25px;
+  
 
 }
 
@@ -197,4 +199,24 @@ footer .btn {
 	
 } 
 
+/* レスポンシブ */
+@media(max-width:600px){
+	body,
+	div#wrapper,
+	div#main {
+		width: 100%;
+		padding: 0.4%;
+	}
+	header {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	
+	
+	div#main {
+		flex-direction: column;
+		align-items: center;
+		height: auto;
+	}
+}
 

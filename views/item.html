@@ -50,32 +50,32 @@
 			<form action="/update/<%= itemId %>" method="post" onsubmit="return check();"><!--server.jsの受け取りは/update/:id-->
 				
 			    <!-- <label for="id">ID</label><br> -->
-					<input type="hidden" name="id" id="id" style="width:400px; height: 20px;" placeholder="1" value="<%= itemId %>">
+					<input type="hidden" name="id" id="id" style="width:400px; height: 40px;" placeholder="1" value="<%= itemId %>">
 				<!-- <br> -->
 				<label for="name">アイテム名</label><br>
-					<input type="text" name="itemName" id="itemName" style="width:400px; height: 20px;" placeholder="クライムライトジャケット" value="<%= itemName %>">
+					<input type="text" name="itemName" id="itemName" style="width:400px; height: 40px;" placeholder="クライムライトジャケット" value="<%= itemName %>">
 				<br>
 				<label for="category">カテゴリー</label><br>
-					<input type="text" name="category" id="category" style="width:400px; height: 20px;" placeholder="アウター" value="<%= category %>">
+					<input type="text" name="category" id="category" style="width:400px; height: 40px;" placeholder="アウター" value="<%= category %>">
 				<br>
 				<label for="brand">ブランド</label><br>
-				 	<input type="text" name="brand" id="brand" style="width:400px; height: 20px;" placeholder="ノースフェイス" value="<%= brand %>">
+				 	<input type="text" name="brand" id="brand" style="width:400px; height: 40px;" placeholder="ノースフェイス" value="<%= brand %>">
 			    <br>
 				 <label for="tokimeki">ときめき度</label><br>
-					<input type="text" name="tokimeki" id="tokimeki" style="width:400px; height: 20px;" placeholder="10" value="<%= tokimeki %>">
+					<input type="text" name="tokimeki" id="tokimeki" style="width:400px; height: 40px;" placeholder="10" value="<%= tokimeki %>">
 				<br>
 				<label for="price">購入価格</label><br>
-					<input type="text" name="price" id="price" style="width:400px; height: 20px;" placeholder="33000" value="<%= price %>">
+					<input type="text" name="price" id="price" style="width:400px; height: 40px;" placeholder="33000" value="<%= price %>">
 				<br>
 				<label for="count">着用回数</label><br>
-					<input type="text" name="count"  id="count" style="width:400px; height: 20px;" placeholder="300" value="<%= times %>">
+					<input type="text" name="count"  id="count" style="width:400px; height: 40px;" placeholder="300" value="<%= times %>">
 				<br>
 				<label for="purchase">購入日</label><br>
-					<input type="text" name="purchase" id="purchase" style="width:400px; height: 20px;" placeholder="" value="<%= day %>">
+					<input type="text" name="purchase" id="purchase" style="width:400px; height: 40px;" placeholder="" value="<%= day %>">
 				<br>
 				<label for="cospa">コスパ</label><br>
-				<p type="text" name="cospa"  id="cospa" style="width:400px; height: 20px;" placeholder="" value=""><%= cospa %></p>
-					<!-- <input type="text" name="cospa"  id="cospa" style="width:400px; height: 20px;" placeholder="" value="<%= cospa %>"> -->
+				<p type="text" name="cospa"  id="cospa" style="width:400px; height: 40px;" placeholder="" value=""><%= cospa %></p>
+					<!-- <input type="text" name="cospa"  id="cospa" style="width:400px; height: 40px;" placeholder="" value="<%= cospa %>"> -->
 			    <br>
 				<label for="file">イメージ</label><br>
 				<input type="file" name="file" id="file">
