@@ -53,6 +53,7 @@ a:focus {outline:none;}
 ========================================= */
 body {
 	background: url("/img/closet-g62cdec9e9_1920.jpeg");
+	background-size: 100%;
 	background-size: cover;
 	background-attachment: fixed;
 	text-shadow:1px 1px 0 #000;
@@ -187,6 +188,7 @@ div.item_image:hover {
 	text-align: center;
 	color: #fff;
 	text-shadow:1px 1px 0 #000;
+	margin: 0;
 }
 
 
