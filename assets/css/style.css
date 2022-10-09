@@ -200,7 +200,7 @@ div.item_image:hover {
 
 .thumnail {
 	margin: 1.5%;
-	background-size: coverいぶ;
+	background-size: cover;
 	background-position: center center;
 	padding-top: calc((300 / 300) * 100%);
 	width: 97%;

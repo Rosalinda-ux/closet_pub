@@ -40,10 +40,8 @@
 
 	<!-- ここからメイン -->
 	<div id="main">
-		<!-- プレビュー -->
-		<div id="image">
-			<img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:300px;">
-		</div>
+
+
 		
 		<!-- 項目詳細 -->
 		<div id="detail">
@@ -78,7 +76,7 @@
 					<!-- <input type="text" name="cospa"  id="cospa" style="width:400px; height: 40px;" placeholder="" value="<%= cospa %>"> -->
 			    <br>
 				<label for="file">イメージ</label><br>
-				<input type="file" accept='image/*' onchange="previewImage(this);">
+				<input type="file" name="file" id="file" accept='image/*' onchange="previewImage(this);">
 				<br>
 				
 		
@@ -89,7 +87,20 @@
 			
 
 		</div>
-	
+	  <!-- 項目詳細ここまで -->
+
+		<!-- 画像ここから -->
+		<div id="image">
+			<!-- すでに追加されている画像の表示 -->
+			<div id="already">
+				<img src="https://drive.google.com/uc?export=view&id=<%= img %>&usp=sharing">
+			</div>
+				<!-- 追加予定の画像プレビュー -->	
+			<div id="preview_par">	
+				<img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:300px;">
+			</div>		
+		</div>
+		<!-- 画像ここまで -->
 		
 	</div>
 
@@ -99,12 +110,13 @@
 
 </div><!-- //#wrapper -->
 
-	<!-- ここからフッター -->
-	<footer></footer>
-	<!-- ここまでフッター -->
+<!-- ここからフッター -->
+<footer></footer>
+<!-- ここまでフッター -->
 
-<!-- jQuery -->
+
 <script>
+	// <!-- jQuery -->
 	//必須チェック
 	function check() {
 		let msg = "";

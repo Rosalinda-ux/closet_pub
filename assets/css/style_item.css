@@ -142,17 +142,28 @@ div#main {
 
 div#image {
 	width: 300px;
-	height: 300px;
-	background-color: blueviolet;
-	opacity: 0.5;
+	height: 775px;
+	/* padding-top: 65px; */
+	/* background-color: blueviolet; */
+	/* opacity: 0.5; */
 }
 
-/* div#digest {
-	
-} */
+#already {
+	width: 300px;
+	height: 300px;
+	/* margin-bottom: 30px; */
+}
+#already img {
+	max-width: 100%;
+}
+
+#preview_par {
+	margin-top: 30px;
+}
 
 div#detail {
-	margin-top: 60px;
+	margin: 30px auto 30px;
+
 }
 
 label {
@@ -220,6 +231,10 @@ footer .btn {
 	div#main {
 		flex-direction: column;
 		align-items: center;
+		height: auto;
+	}
+
+	#image {
 		height: auto;
 	}
 }
