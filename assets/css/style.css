@@ -56,11 +56,13 @@ a:focus {outline:none;}
 }
 body {
 	width: 100%;
+	min-height: 100vh;
 	background: url("/img/closet-g62cdec9e9_1920.jpeg");
 	background-size: 100%;
 	background-attachment: fixed;
 	text-shadow:1px 1px 0 #000;
 	background-size: cover;
+	background-position: center;
 }
 img {
 	max-width: 100%;
@@ -163,7 +165,7 @@ div.container {
 	padding-top: 110px;
 	display: grid;
 	grid-template-columns: repeat(3,1fr);
-	grid-template-rows: repeat(200,300px);
+	grid-template-rows: repeat(auto,300px);
 	gap: 40px;
 }
 
@@ -239,19 +241,32 @@ footer {
 		padding: 0.4%;
 	}
 
-	.header,
+	header,
 	div#wrapper,
 	div#main {
 		width: 100%;
+
 	}
 	
-	div.item_image {
+	div.item_image{
+		width: 100%;
     margin: 0 auto;
   }
+	/* div.item_image a img{
+		width: 100%!important;
+		height: auto!important;
+		
+	} */
+	div.item_image p {
+		font-size: 16px;
+		top:-50px;
+	}
+	
 
 	div.container {
 		width: 100%;
-		display: flex;
+		gap: 3px;
+		/* display: flex; */
 		/* flex-wrap: wrap; */
 	}
 }
