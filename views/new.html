@@ -37,7 +37,7 @@
 
 	<!-- ここからメイン -->
 	<div id="main">
-		<!-- 画像 -->
+		<!-- プレビュー -->
 		<div id="image">
 			<img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">	
 		</div>
@@ -73,7 +73,7 @@
 				<br>
 				<!-- 画像アップロード -->
 				<label for="file">イメージ</label><br>
-				<input type="file" name="file" id="file">
+				<input type="file" accept='image/*' onchange="previewImage(this);">
 				<br>
 				<!-- 登録ボタン -->
 				<input class="btn btn_update" type="submit" value="登録">

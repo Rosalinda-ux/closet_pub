@@ -40,7 +40,7 @@
 
 	<!-- ここからメイン -->
 	<div id="main">
-		<!-- 画像 -->
+		<!-- プレビュー -->
 		<div id="image">
 			<img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:300px;">
 		</div>
@@ -78,7 +78,7 @@
 					<!-- <input type="text" name="cospa"  id="cospa" style="width:400px; height: 40px;" placeholder="" value="<%= cospa %>"> -->
 			    <br>
 				<label for="file">イメージ</label><br>
-				<input type="file" name="file" id="file">
+				<input type="file" accept='image/*' onchange="previewImage(this);">
 				<br>
 				
 		

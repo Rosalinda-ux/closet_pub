@@ -59,7 +59,7 @@ body {
 	background-size: 100%;
 	background-attachment: fixed;
 	background-size: cover;
-	
+
 }
 
 div#wrapper {
@@ -80,7 +80,7 @@ header {
 	justify-content: space-between;
 	/*position:fixed;*/
 
-	box-shadow:0px 1px rgba(0,0,0,5);
+	box-shadow: 0px 1px rgba(0, 0, 0, 5);
 }
 
 .btn {
@@ -89,20 +89,20 @@ header {
 	background-color: rgba(108, 77, 77, 0.9);
 	text-decoration: none;
 	padding: 8px 24px;
-	text-shadow:1px 1px 0 #000;
+	text-shadow: 1px 1px 0 #000;
 	border-radius: 10px;
-	box-shadow:3px 3px rgba(62, 46, 46, 0.9);
+	box-shadow: 3px 3px rgba(62, 46, 46, 0.9);
 	font-size: 18px;
 }
 
 .btn:hover {
 	color: orange;
 	background-color: rgba(108, 77, 77, 1);
-	box-shadow:3px 3px rgba(81, 59, 59, 1);
+	box-shadow: 3px 3px rgba(81, 59, 59, 1);
 }
 
 .btn:active {
-	box-shadow:1px 1px rgba(81, 59, 59, 1);
+	box-shadow: 1px 1px rgba(81, 59, 59, 1);
 	position: relative;
 	top: 2px;
 	left: 2px;
@@ -116,10 +116,12 @@ h1 {
 	margin: 0 auto;
 	line-height: 89px;
 	color: #fff;
-	text-shadow:1px 1px 0 #000/*, -1px -1px 0 #000,
+	text-shadow: 1px 1px 0 #000
+		/*, -1px -1px 0 #000,
  		              -1px 1px 0 #000, 1px -1px 0 #000,
  		              0px 1px 0 #000,  0-1px 0 #000,
- 		              -1px 0 0 #000*/;
+ 		              -1px 0 0 #000*/
+	;
 
 }
 
@@ -136,8 +138,6 @@ div#main {
 	justify-content: space-around;
 	align-items: center;
 	font-size: 25px;
-  
-
 }
 
 div#image {
@@ -157,10 +157,12 @@ div#detail {
 
 label {
 	color: #fff;
-	text-shadow:1px 1px 0 #000/*, -1px -1px 0 #000,
+	text-shadow: 1px 1px 0 #000
+		/*, -1px -1px 0 #000,
  		              -1px 1px 0 #000, 1px -1px 0 #000,
  		              0px 1px 0 #000,  0-1px 0 #000,
- 		              -1px 0 0 #000, 1px 0 0 #000*/;
+ 		              -1px 0 0 #000, 1px 0 0 #000*/
+	;
 
 }
 
@@ -178,7 +180,7 @@ label {
 }
 
 div.clear {
-	clear:both;
+	clear: both;
 }
 
 /* ========================================  　
@@ -191,32 +193,33 @@ footer {
 	/* background-color:black; */
 	margin-top: 20px;
 	display: flex;
-	justify-content:center
+	justify-content: center
 }
 
 footer .btn {
 	margin: auto;
-	
-} 
+
+}
 
 /* レスポンシブ */
-@media(max-width:600px){
+@media(max-width:600px) {
+
 	body,
 	div#wrapper,
 	div#main {
 		width: 100%;
 		padding: 0.4%;
 	}
+
 	header {
 		width: 100%;
 		margin-bottom: 30px;
 	}
-	
-	
+
+
 	div#main {
 		flex-direction: column;
 		align-items: center;
 		height: auto;
 	}
 }
-
