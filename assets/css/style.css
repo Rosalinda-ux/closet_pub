@@ -169,11 +169,20 @@ div.container {
 	gap: 40px;
 }
 
- div.item_image {
-	height: 300px; 
-	width: 300px;
+div.item_image {
+
 	background-color: #0bd; 	
 } 
+
+.thumnail {
+	margin: 1.5%;
+	background-size: cover;
+	background-position: center center;
+	padding-top: calc((300 / 300) * 100%);
+	width: 97%;
+}
+
+
 
 div.item_image a {
 	text-decoration: none;
@@ -240,7 +249,9 @@ footer {
 	body {
 		padding: 0.4%;
 	}
-
+  h1 {
+		font-size: 20px;
+	}
 	header,
 	div#wrapper,
 	div#main {
