@@ -41,14 +41,12 @@
 	<!-- ここからメイン -->
 	<div id="main">
 
-
-		
 		<!-- 項目詳細 -->
 		<div id="detail">
-			<form action="/update/<%= itemId %>" method="post" onsubmit="return check();"><!--server.jsの受け取りは/update/:id-->
-				
+			<form action="/update/<%= itemId %>" method="post" onsubmit="return check();" enctype="multipart/form-data">
+			<!-- server.jsの受け取りは/update/:id　fileのアップロードにenctype="multipart/form-data" -->
 			    <!-- <label for="id">ID</label><br> -->
-					<input type="hidden" name="id" id="id" style="width:400px; height: 40px;" placeholder="1" value="<%= itemId %>">
+					<input type="hidden" name="id" id="id" style="width:400px; height: 40px;" value="<%= itemId %>">
 				<!-- <br> -->
 				<label for="name">アイテム名</label><br>
 					<input type="text" name="itemName" id="itemName" style="width:400px; height: 40px;" placeholder="クライムライトジャケット" value="<%= itemName %>">
@@ -74,12 +72,12 @@
 				<label for="cospa">コスパ</label><br>
 				<p type="text" name="cospa"  id="cospa" style="width:400px; height: 40px;" placeholder="" value=""><%= cospa %></p>
 					<!-- <input type="text" name="cospa"  id="cospa" style="width:400px; height: 40px;" placeholder="" value="<%= cospa %>"> -->
-			    <br>
+			  <br>
+				<!-- 画像アップロード -->
 				<label for="file">イメージ</label><br>
 				<input type="file" name="file" id="file" accept='image/*' onchange="previewImage(this);">
 				<br>
 				
-		
 				<!-- 更新ボタン -->
 				<input class="btn btn_update" type="submit" value="更新">
 			 
