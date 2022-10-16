@@ -161,39 +161,65 @@ app.get('/new', (req,res) => {
 // データを追加するルーティング
 app.post('/new', (req, res) => {
   console.log("新規登録を開始");
-  //fileがないとつまづく
-
-  console.log("req.file.path",req.file.path, "req.file", req.file);
-  fs.readFile(req.file.path, 'base64', function(err, data) {
-    //reqのparams,queryは空.bodyにデータ本体が入っている
-    console.log("/newのreq.body.itemName", req.body.itemName);//bodyはhtmlに入力されたデータ
-    // console.log("/newのreq.body.id", req.body.id);//undefined,idはhtmlで入力せずgasで振るので
+  //fileがないとつまづくのでifで場合分け
+  if (req.file) {
+    fs.readFile(req.file.path, 'base64', function(err, data) {
+      //reqのparams,queryは空.bodyにデータ本体が入っている
+      console.log("/newのreq.body.itemName", req.body.itemName);//bodyはhtmlに入力されたデータ
+      // console.log("/newのreq.body.id", req.body.id);//undefined,idはhtmlで入力せずgasで振るので
+      //GASにデータを追加
+      gasPostCall("", {//data: body
+      //キー名   :req.body.(htmlのname属性)  
+      // id     :req.body.id,//undefined,新規登録でidはhtmlで入力せずgasで振る
+        itemName:req.body.itemName,
+        category:req.body.category,
+        brand   :req.body.brand,
+        tokimeki:req.body.tokimeki,
+        price   :req.body.price,
+        count   :req.body.count,
+        cospa   :req.body.cospa,
+        purchase:req.body.purchase,
+        fileData:data//写真データ
+      }, function(e, r, b) {
+        if (e) {
+          console.log("エラーを表示");
+          console.log(e);
+        }
+        console.log("/new gasから返ってきた");
+        console.log("/newのgasPostCallのreturn b =", b);
+        // let c = JSON.parse(b);
+        // console.log(c);
+        console.log("'/'にリダイレクトする")
+        res.redirect('/');
+      });
+    });//fs
+  } else {
     //GASにデータを追加
     gasPostCall("", {//data: body
-    //キー名   :req.body.(htmlのname属性)  
-    // id     :req.body.id,//undefined,新規登録でidはhtmlで入力せずgasで振る
-      itemName:req.body.itemName,
-      category:req.body.category,
-      brand   :req.body.brand,
-      tokimeki:req.body.tokimeki,
-      price   :req.body.price,
-      count   :req.body.count,
-      cospa   :req.body.cospa,
-      purchase:req.body.purchase,
-      fileData:data//写真データ
-    }, function(e, r, b) {
-      if (e) {
-        console.log("エラーを表示");
-        console.log(e);
-      }
-      console.log("/new gasから返ってきた");
-      console.log("/newのgasPostCallのreturn b =", b);
-      // let c = JSON.parse(b);
-      // console.log(c);
-      console.log("'/'にリダイレクトする")
-      res.redirect('/');
+      //キー名   :req.body.(htmlのname属性)  
+      // id     :req.body.id,//undefined,新規登録でidはhtmlで入力せずgasで振る
+        itemName:req.body.itemName,
+        category:req.body.category,
+        brand   :req.body.brand,
+        tokimeki:req.body.tokimeki,
+        price   :req.body.price,
+        count   :req.body.count,
+        cospa   :req.body.cospa,
+        purchase:req.body.purchase,
+        // fileData:data//写真データ
+      }, function(e, r, b) {
+        if (e) {
+          console.log("エラーを表示");
+          console.log(e);
+        }
+        console.log("/new gasから返ってきた");
+        console.log("/newのgasPostCallのreturn b =", b);
+        // let c = JSON.parse(b);
+        // console.log(c);
+        console.log("'/'にリダイレクトする")
+        res.redirect('/');
     });
-  });   
+  }
 });
 
 // データを更新するルーティング
@@ -203,9 +229,34 @@ app.post('/update/:id', (req, res) => {
   console.log("/updateのreq.body.id =", req.body.id);
   if (req.file) console.log("req.file", req.file);
   console.log("req.body", req.body);
-  //fileがないと、ここでつまづく
-  fs.readFile(req.file.path, 'base64', function(err, data) {
-    // console.log("data==", data); 
+  //fileがないと、ここでつまづくのでifで場合分け
+　if (req.file) {
+    fs.readFile(req.file.path, 'base64', function(err, data) {
+      //GASのデータを更新
+      gasPostCall("", {//data//req.params.idが良い？
+        id      :req.body.id,//このbodyはreqのbody//htmlの/itemに入力された値
+        itemName:req.body.itemName,
+        category:req.body.category,
+        brand   :req.body.brand,
+        tokimeki:req.body.tokimeki,
+        price   :req.body.price,
+        count   :req.body.count,
+        cospa   :req.body.cospa,
+        purchase:req.body.purchase,
+        fileData:data//写真データ
+      }, function(e, r, b) {
+        console.log("gasから返ってきた")
+        if (e) {
+          console.log("エラーを表示");
+          console.log("e=", e);
+        }
+        console.log("b=", b);
+        console.log("/updateから'/'にリダイレクトする")
+        res.redirect('/');
+      });
+    });
+
+  } else {
     //GASのデータを更新
     gasPostCall("", {//data//req.params.idが良い？
       id      :req.body.id,//このbodyはreqのbody//htmlの/itemに入力された値
@@ -216,8 +267,8 @@ app.post('/update/:id', (req, res) => {
       price   :req.body.price,
       count   :req.body.count,
       cospa   :req.body.cospa,
-      purchase:req.body.purchase,
-      fileData:data//写真データ
+      purchase:req.body.purchase
+      // fileData:data//写真データ
     }, function(e, r, b) {
       console.log("gasから返ってきた")
       if (e) {
@@ -228,7 +279,9 @@ app.post('/update/:id', (req, res) => {
       console.log("/updateから'/'にリダイレクトする")
       res.redirect('/');
     });
-  });
+  
+  } 
+
 });
 
 // データを削除するルーティング

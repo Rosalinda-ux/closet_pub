@@ -32,8 +32,9 @@
 		
 		<h1>closet maneger</h1>
 		<!-- ＋ボタン -->
-		<a class="btn" href="/new">
-			<i class="fa-solid fa-circle-plus fa-3x"></i>
+		<a  href="/new">
+			<input class="btn" type="submit" value="新規登録">
+			<!-- <i class="fa-solid fa-circle-plus fa-3x"></i> -->
 		</a>
 					
 	</header>
@@ -47,11 +48,13 @@
 				
 				<div class="item_image" >
 					<a href="/item?id=<%= itemId[i] %>">
-						
+						<% if (imgs[i] === "") {%>
 						<!-- comingsoon -->
-						<!-- <img src="/img/comingsoon.png" style= "width:300px; height:300px"; alt="image"> -->
+						<img src="/img/comingsoon.png" style= "width:300px; height:300px"; alt="image">
+						<% } else { %>
 						<div class="thumnail" style="background-image: url(https://drive.google.com/uc?export=view&id=<%= imgs[i] %>&usp=sharing)";></div>							
 						<!-- <img src="https://drive.google.com/uc?export=view&id=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&usp=sharing"> -->
+						<% } %>
 						<p><%= names[i] %></p>
 					</a>
 				</div>

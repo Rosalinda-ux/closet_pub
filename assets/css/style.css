@@ -107,7 +107,32 @@ a {
 	font-size: larger;
 }
 
+
 .btn {
+	color: #fff;
+	display: inline-block;
+	background-color: rgba(108, 77, 77, 0.9);
+	text-decoration: none;
+	padding: 8px 24px;
+	text-shadow: 1px 1px 0 #000;
+	border-radius: 10px;
+	box-shadow: 3px 3px rgba(62, 46, 46, 0.9);
+	font-size: 18px;
+}
+
+.btn:hover {
+	color: orange;
+	background-color: rgba(108, 77, 77, 1);
+	box-shadow: 3px 3px rgba(81, 59, 59, 1);
+}
+
+.btn:active {
+	box-shadow: 1px 1px rgba(81, 59, 59, 1);
+	position: relative;
+	top: 2px;
+	left: 2px;
+}
+/* .btn {
 	color: rgba(108, 77, 77, 1);
 	text-shadow: 3px 3px rgba(60, 44, 44, 0.8);
 	cursor: pointer;
@@ -126,7 +151,7 @@ a {
 	position: relative;
 	top: 2px;
 	left: 2px;
-}
+} */
 
 /* .fa-solid fa-circle-plus fa-3x {
 	color: rgba(108, 77, 77, 0.8);
@@ -181,7 +206,7 @@ div.item_image a {
 }
 
 div.item_image:hover {
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 .item_image img {
