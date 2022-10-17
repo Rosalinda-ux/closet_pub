@@ -11,8 +11,11 @@
 # 機能一覧
 
 洋服の新規登録
+
 登録した洋服の一覧の閲覧(画像と名前)
+
 登録した洋服の詳細情報の確認・編集・削除
+
 
 # 使用している技術一覧
 
@@ -20,7 +23,7 @@
 HTML, CSS, JavaScript, jQuery
 
 ## バック
-Node.js, Express, Apache,Google Apps Script
+Node.js, Express, Apache, Google Apps Script
 
 ## データベース
 Google Spread Sheet
