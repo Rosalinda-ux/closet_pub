@@ -39,14 +39,6 @@ const GAS_URL   = GAS_BASE_URL.replace('@SCRIPT_ID', SCRIPT_ID);
 /* 汎用処理                     */
 /*------------------------------*/
 
-/* 指定したURLにリダイレクトする */
-function redirectUrl(res, url) {
-  res.writeHead(302, {
-    'Location': url
-  });
-  res.end();
-}
-
 /* GAS呼び出し(GET) */
 function gasGetCall(param, callback) {
   let url = GAS_URL + param;
@@ -69,6 +61,8 @@ function gasPostCall(param, data, callback) {//postはparamいらない？
   console.log("GAS呼び出し(POST)", /*data*/);
   return request.post(options, callback);
 }
+
+//function register()
 
 /*------------------------------*/
 /* ルーティング設定             */
