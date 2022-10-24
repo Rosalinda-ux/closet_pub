@@ -2,9 +2,9 @@
 <html lang="ja">
 
 <head>
-	<meta charset="UTF-8">	
+	<meta charset="UTF-8">
 	<title>item maneger</title>
-	<link href = " https://unpkg.com/sanitize.css " rel = " stylesheet "/>
+	<link href=" https://unpkg.com/sanitize.css " rel=" stylesheet " />
 	<link rel="stylesheet" href="css/style_item.css" type="text/css" media="screen">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,8 @@
 	<!--フォント-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Roboto:wght@300&display=swap"
+		rel="stylesheet">
 	<!--ここまでフォント-->
 	<!--font awesome-->
 	<script src="https://kit.fontawesome.com/f8c8eab077.js" crossorigin="anonymous"></script>
@@ -21,115 +22,116 @@
 
 </head>
 
-<body>	
+<body>
 
-<div id="wrapper">
+	<div id="wrapper">
 
-	<!-- ここからヘッダー -->
-	<header>
-		
-		<a class="btn" href="/">戻る</a>
-		<h1>New item</h1>
-		<!-- <a class="btn" href="#">削除</a> -->
-					
-	</header>
-	<!-- ここまでヘッダー -->
+		<!-- ここからヘッダー -->
+		<header>
 
-	<!-- ここからメイン -->
-	<div id="main">
-		
-		<!-- 項目詳細 -->
-		<div id="detail">
-			<form action="/new" method="post" onsubmit="return check();" enctype="multipart/form-data">
-			    <!-- <label for="id">ID</label><br>
+			<a class="btn" href="/">戻る</a>
+			<h1>New item</h1>
+			<!-- <a class="btn" href="#">削除</a> -->
+
+		</header>
+		<!-- ここまでヘッダー -->
+
+		<!-- ここからメイン -->
+		<div id="main">
+
+			<!-- 項目詳細 -->
+			<div id="detail">
+				<form action="/new" method="post" onsubmit="return check();" enctype="multipart/form-data">
+					<!-- <label for="id">ID</label><br>
 					<input type="text" name="id" id="id" style="width:400px; height: 40px;" placeholder="自動取得にしたい">
 				<br> -->
-				<label for="name">アイテム名</label><br>
+					<label for="name">アイテム名</label><br>
 					<input type="text" name="itemName" id="itemName" style="width:400px; height: 40px;" placeholder="シャツ">
-				<br>
-				<label for="category">カテゴリー</label><br>
+					<br>
+					<label for="category">カテゴリー</label><br>
 					<input type="text" name="category" id="category" style="width:400px; height: 40px;" placeholder="トップス">
-				<br>
-				<label for="brand">ブランド</label><br>
-				 	<input type="text" name="brand" id="brand" style="width:400px; height: 40px;" placeholder="ユニクロ">
-			    <br>
-				 <label for="tokimeki">ときめき度</label><br>
+					<br>
+					<label for="brand">ブランド</label><br>
+					<input type="text" name="brand" id="brand" style="width:400px; height: 40px;" placeholder="ユニクロ">
+					<br>
+					<label for="tokimeki">ときめき度</label><br>
 					<input type="text" name="tokimeki" id="tokimeki" style="width:400px; height: 40px;" placeholder="5">
-				<br>
-				<label for="price">購入価格</label><br>
+					<br>
+					<label for="price">購入価格</label><br>
 					<input type="text" name="price" id="price" style="width:400px; height: 40px;" placeholder="2990">
-				<br>
-				<label for="count">着用回数</label><br>
-					<input type="text" name="count"  id="count" style="width:400px; height: 40px;" placeholder="10">
-				<br>
-				<!-- <label for="cospa">コスパ</label><br>
+					<br>
+					<label for="count">着用回数</label><br>
+					<input type="text" name="count" id="count" style="width:400px; height: 40px;" placeholder="10">
+					<br>
+					<!-- <label for="cospa">コスパ</label><br>
 					<input type="hidden" name="cospa"  id="cospa" style="width:400px; height: 40px;" placeholder="299">
 			    <br> -->
-				<label for="purchase">購入日</label><br>
+					<label for="purchase">購入日</label><br>
 					<input type="text" name="purchase" id="purchase" style="width:400px; height: 40px;" placeholder="2022/1/1">
-				<br>
-				<!-- 画像アップロード -->
-				<label for="file">イメージ</label><br>
-				<input type="file" name="file" id="file" accept='image/*' onchange="previewImage(this);">
-				<br>
+					<br>
+					<!-- 画像アップロード -->
+					<label for="file">イメージ</label><br>
+					<input type="file" name="file" id="file" accept='image/*' onchange="previewImage(this);">
+					<br>
 
-				<!-- 登録ボタン -->
-				<input class="btn btn_update" type="submit" value="登録">
-			</form>
+					<!-- 登録ボタン -->
+					<input class="btn btn_update" type="submit" value="登録">
+				</form>
+
+			</div>
+			<!-- 項目詳細ここまで -->
+
+			<!-- 画像ここから -->
+			<div id="image">
+
+				<!-- 追加予定の画像プレビュー -->
+				<div id="preview_par">
+					<img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+						style="max-width:300px;">
+				</div>
+
+			</div>
+			<!-- 画像ここまで -->
 
 		</div>
-		<!-- 項目詳細ここまで -->
 
-	  <!-- 画像ここから -->
-		<div id="image">
+		<!-- ここまでメイン -->
 
-			<!-- 追加予定の画像プレビュー -->	
-			<div id="preview_par">	
-				<img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:300px;">
-			</div>	
+		<div class="clear"></div>
 
-		</div>
-		<!-- 画像ここまで -->
+	</div><!-- //#wrapper -->
 
-	</div>
-
-	<!-- ここまでメイン -->
-
-	<div class="clear"></div>
-
-</div><!-- //#wrapper -->
-
-<!-- ここからフッター -->
-<footer></footer>
-<!-- ここまでフッター -->
+	<!-- ここからフッター -->
+	<footer></footer>
+	<!-- ここまでフッター -->
 
 
-<script>
-	// <!-- jQuery -->
-	//必須チェック
-	function check() {
-		let msg = "";
-		if ($('#itemName').val() === "") {
-			msg += "アイテム名は必須です\n";
+	<script>
+		// <!-- jQuery -->
+		//必須チェック
+		function check() {
+			let msg = "";
+			if ($('#itemName').val() === "") {
+				msg += "アイテム名は必須です\n";
+			}
+			if ($('#category').val() === "") {
+				msg += "カテゴリーは必須です\n";
+			}
+			if (msg !== "") {
+				alert(msg);
+				return false;
+			}
+			return true;
+		};
+		//プレビュー
+		function previewImage(obj) {
+			let fileReader = new FileReader();
+			fileReader.onload = (function () {
+				document.getElementById('preview').src = fileReader.result;
+			});
+			fileReader.readAsDataURL(obj.files[0]);
 		}
-		if ($('#category').val() === "") {
-			msg += "カテゴリーは必須です\n";
-		}
-		if (msg !== "") {
-			alert(msg);
-			return false;
-		}
-		return true;
-	};
-	//プレビュー
-	function previewImage(obj){
-		let fileReader = new FileReader();
-		fileReader.onload = (function() {
-			document.getElementById('preview').src = fileReader.result;
-		});
-		fileReader.readAsDataURL(obj.files[0]);
-	}
-</script>
+	</script>
 
 </body>
 

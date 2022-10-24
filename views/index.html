@@ -2,9 +2,9 @@
 <html lang="ja">
 
 <head>
-	<meta charset="UTF-8">	
+	<meta charset="UTF-8">
 	<title>closet maneger</title>
-	<link href = " https://unpkg.com/sanitize.css " rel = " stylesheet "/>
+	<link href=" https://unpkg.com/sanitize.css " rel=" stylesheet " />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,8 @@
 	<!--フォント-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Roboto:wght@300&display=swap"
+		rel="stylesheet">
 	<!--ここまでフォント-->
 	<!--font awesome-->
 	<script src="https://kit.fontawesome.com/f8c8eab077.js" crossorigin="anonymous"></script>
@@ -23,73 +24,77 @@
 
 </head>
 
-<body>	
+<body>
 
-<div id="wrapper">
+	<div id="wrapper">
 
-	<!-- ここからヘッダー -->
-	<header>
-		
-		<h1>closet maneger</h1>
-		<!-- ＋ボタン -->
-		<a  href="/new">
-			<input class="btn" type="submit" value="新規登録">
-			<!-- <i class="fa-solid fa-circle-plus fa-3x"></i> -->
-		</a>
-					
-	</header>
-	<!-- ここまでヘッダー -->
+		<!-- ここからヘッダー -->
+		<header>
 
-	<!-- ここからメイン -->
+			<h1>closet maneger</h1>
+			<!-- ＋ボタン -->
+			<a href="/new">
+				<input class="btn" type="submit" value="新規登録">
+				<!-- <i class="fa-solid fa-circle-plus fa-3x"></i> -->
+			</a>
 
-	<div id="main">
-		<div class="container">
-			<% for (let i = 0; i < names.length; i++) { %>
-				
-				<div class="item_image" >
-					<a href="/item?id=<%= itemId[i] %>">
-						<% if (imgs[i] === "") {%>
-						<!-- comingsoon -->
-						<img src="/img/comingsoon.png" style= "width:300px; height:300px"; alt="image">
-						<% } else { %>
-						<div class="thumnail" style="background-image: url(https://drive.google.com/uc?export=view&id=<%= imgs[i] %>&usp=sharing)";></div>							
-						<!-- <img src="https://drive.google.com/uc?export=view&id=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&usp=sharing"> -->
-						<% } %>
-						<p><%= names[i] %></p>
-					</a>
-				</div>
-				
-			<% } %>		
+		</header>
+		<!-- ここまでヘッダー -->
+
+		<!-- ここからメイン -->
+
+		<div id="main">
+			<div class="container">
+				<% for (let i=0; i < names.length; i++) { %>
+
+					<div class="item_image">
+						<a href="/item?id=<%= itemId[i] %>">
+							<% if (imgs[i]==="" ) {%>
+								<!-- comingsoon -->
+								<img src="/img/comingsoon.png" style="width:300px; height:300px" ; alt="image">
+								<% } else { %>
+									<div class="thumnail"
+										style="background-image: url(https://drive.google.com/uc?export=view&id=<%= imgs[i] %>&usp=sharing)"
+										;></div>
+									<!-- <img src="https://drive.google.com/uc?export=view&id=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&usp=sharing"> -->
+									<% } %>
+										<p>
+											<%= names[i] %>
+										</p>
+						</a>
+					</div>
+
+					<% } %>
+			</div>
 		</div>
-	</div>
 
-	<!-- ここまでメイン -->
+		<!-- ここまでメイン -->
 
-	<div class="clear"></div>
+		<div class="clear"></div>
 
-</div><!-- //#wrapper -->
+	</div><!-- //#wrapper -->
 
 	<!-- ここからフッター -->
 	<footer>
-		
+
 	</footer>
 	<!-- ここまでフッター -->
 
 
-<script>
-	// <!-- jQuery -->
-	$(function(){
-		// ページ最上部まで自動でスクロール
-		$('h1').click(function() {
-    		$('html, body').animate({
-				'scrollTop': 0
-			}, 'slow');
-				
-  		});
-	  
-	});
+	<script>
+		// <!-- jQuery -->
+		$(function () {
+			// ページ最上部まで自動でスクロール
+			$('h1').click(function () {
+				$('html, body').animate({
+					'scrollTop': 0
+				}, 'slow');
 
-</script>
+			});
+
+		});
+
+	</script>
 
 </body>
 
