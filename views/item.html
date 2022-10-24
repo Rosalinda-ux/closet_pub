@@ -31,11 +31,11 @@
 		<!-- ここからヘッダー -->
 		<header>
 
-			<a class="btn" href="/">戻る</a>
+			<a class="btn header_left_btn" href="/">戻る</a>
 			<h1>item Details</h1>
 			<!-- 削除ボタン -->
 			<form action="/delete/<%= itemId %>" method="post">
-				<input class="btn" type="submit" value="削除">
+				<input class="btn header_right_btn" type="submit" value="削除">
 			</form>
 
 		</header>
@@ -76,8 +76,7 @@
 						value="<%= times %>">
 					<br>
 					<label for="purchase">購入日</label><br>
-					<input type="text" name="purchase" id="purchase datepicker" style="width:400px; height: 40px;" placeholder=""
-						value="<%= day %>">
+					<input type="text" name="purchase" id="purchase" style="width:400px; height: 40px;" placeholder="">
 
 					<br>
 					<label for="cospa">コスパ</label><br>
@@ -89,14 +88,12 @@
 					<!-- 画像アップロード -->
 					<label for="file">イメージ</label><br>
 					<input type="file" name="file" id="file" accept='image/*' onchange="previewImage(this);">
+					<input type="hidden" name="img" id="img" value="<%= img %>">
 					<br>
 
 					<!-- 更新ボタン -->
 					<input class="btn btn_update" type="submit" value="更新">
-
 				</form>
-
-
 			</div>
 			<!-- 項目詳細ここまで -->
 
@@ -152,7 +149,17 @@
 			fileReader.readAsDataURL(obj.files[0]);
 		};
 		//カレンダー
-		$('#datepicker').datepicker();
+		let date = "<%= day %>" || "";	
+		$('#purchase').datepicker({
+			showButtonPanel: true, 
+			changeMonth: true,
+			changeYear: true,
+      duration: 300,
+			showOtherMonths: true, 
+      showAnim: 'show',
+			dateFormat: 'yy/mm/dd'	
+		});
+		$('#purchase').datepicker("setDate", date);
 	</script>
 
 </body>

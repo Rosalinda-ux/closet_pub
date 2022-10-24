@@ -73,7 +73,7 @@ div#wrapper {
 header {
 	width: 980px;
 	height: 89px;
-	/* background-color:#036038;  */
+	background-color:#036038;
 	margin-bottom: 40px;
 	display: flex;
 	align-items: center;
@@ -123,6 +123,14 @@ h1 {
  		              -1px 0 0 #000*/
 	;
 
+}
+
+.header_left_btn {
+	margin-left: 20px;
+}
+
+.header_right_btn {
+  margin-right: 20px;
 }
 
 /* ========================================  　

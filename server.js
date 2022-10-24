@@ -107,7 +107,7 @@ app.get('/item', function (req, res) {
   console.log("アイテム詳細ページの表示処理を開始");
   console.log("/itemのreq.query.id =", req.query.id);//idが存在
   console.log("/itemのreq.params.id =", req.params.id);//idがない
-　//∵index.htmlでhref="/item?id=<%= itemId[i] %>"としてる
+  //∵index.htmlでhref="/item?id=<%= itemId[i] %>"としてる
   gasGetCall("?id=" + req.query.id, function(e, r, b) {
     if (e) {
       console.log("エラーを表示");
@@ -224,7 +224,7 @@ app.post('/update/:id', (req, res) => {
   if (req.file) console.log("req.file", req.file);
   console.log("req.body", req.body);
   //fileがないと、ここでつまづくのでifで場合分け
-　if (req.file) {
+  if (req.file) {
     fs.readFile(req.file.path, 'base64', function(err, data) {
       //GASのデータを更新
       gasPostCall("", {//data//req.params.idが良い？
@@ -261,8 +261,8 @@ app.post('/update/:id', (req, res) => {
       price   :req.body.price,
       count   :req.body.count,
       cospa   :req.body.cospa,
-      purchase:req.body.purchase
-      // fileData:data//写真データ
+      purchase:req.body.purchase,
+      img     :req.body.img//写真データ
     }, function(e, r, b) {
       console.log("gasから返ってきた")
       if (e) {

@@ -34,7 +34,7 @@
 			<h1>closet maneger</h1>
 			<!-- ＋ボタン -->
 			<a href="/new">
-				<input class="btn" type="submit" value="新規登録">
+				<input class="btn header_btn" type="submit" value="新規登録">
 				<!-- <i class="fa-solid fa-circle-plus fa-3x"></i> -->
 			</a>
 
@@ -57,6 +57,7 @@
 										style="background-image: url(https://drive.google.com/uc?export=view&id=<%= imgs[i] %>&usp=sharing)"
 										;></div>
 									<!-- <img src="https://drive.google.com/uc?export=view&id=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&usp=sharing"> -->
+									<input type="hidden" name="img" id="img" value="<%= img %>">
 									<% } %>
 										<p>
 											<%= names[i] %>
