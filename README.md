@@ -32,4 +32,4 @@ Google Spread Sheet
 Vagrant, Virtual Box
 
 ## インフラ
-Google Cloud Platform
+conoha vps, (使用していた：Google Cloud Platform)
